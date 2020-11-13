@@ -1,0 +1,78 @@
+<div *ngIf="finish && !loading">
+<div class="col-md-12 col-lg-12" style="margin-top: 5%;">
+    <br/>
+    <h3 style="text-align: center;font-size: 40px;">Deposit</h3>
+    <br/>
+    <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+        <!-- Deposit Money Text Box -->
+        <br/>
+        <div class="form-group row">
+            <label for="deposit" class="col-lg-4 text-right font-weight-bold">
+                Deposit Money :
+            </label>
+            <div class="col-lg-6">
+                <input type="number" class="form-control" placeholder="Deposit Amount" formControlName="deposit" />
+
+                <div *ngIf="submitted && depositForm.controls.deposit.errors">
+                    <div class="text-danger" *ngIf="depositForm.controls.deposit.errors.required">
+                        Deposit Amount is required...!
+                    </div>
+                    <div class="text-danger" *ngIf="depositForm.controls.deposit.errors.min">
+                        Invalid Amount...!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of  Deposit Money Text Box -->
+
+        <!-- Password Text Box -->
+        <div class="form-group row">
+            <label for="password" class="col-lg-4 text-right font-weight-bold">
+                Password :
+            </label>
+            <div class="col-lg-6">
+                <input type="password" class="form-control " placeholder="Password" formControlName="password" />
+                <div *ngIf="submitted && depositForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="depositForm.controls.password.errors.required">
+                        Password is required ...!
+                    </div>
+                </div>
+                <div *ngIf="submitted && invalidPassword && !(depositForm.controls.password.errors)">
+                    <div class="text-danger">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of  Password Text Box -->
+
+        <div class="col-lg-10 text-right">
+            <button class="btn btn-success">Deposit</button> &nbsp; &nbsp;
+            <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+            <button class="btn btn-outline-warning" routerLink="/userLogin/accDetails">Back</button>
+        </div>
+        <br/>
+    </form>
+</div>
+</div>
+
+<div class="text-center col-lg-12 col-md-12" *ngIf="!finish && !loading" style="margin-top: 100px;">
+    <br>
+    <br>
+    <img src="/assets/images/success.gif" height="125" width="125" />
+    <br>
+    <br/>
+    <h4 class="text-solid">
+        Transaction Successful...!!
+    </h4>
+</div>
+<div class="text-center col-lg-12 col-md-12" *ngIf="loading" style="margin-top: 100px;">
+    <br>
+    <br>
+    <img src="/assets/images/loading.gif" height="125" width="125" />
+    <br>
+    <br/>
+    <h4 class="text-solid">
+        Please Wait...
+    </h4>
+</div>

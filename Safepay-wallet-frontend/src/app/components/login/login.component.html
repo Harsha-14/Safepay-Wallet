@@ -1,0 +1,60 @@
+<div class="bground col-lg-12 col-md-12" style="background-image: url(assets/images/2.jpg);height: 750px;background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <br/>
+    <form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+        <div>
+            <br/>
+            <h3 class="text-center" style="font-size: 50px;">User Login</h3>
+            <br/>
+        </div>
+        <br/>
+        <div class="form-group row">
+
+            <label for="userName" class="offset-lg-1 col-lg-2 text-left font-weight-bold" style="font-size: 17px;">
+                User Name :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" formControlName="userName" placeholder="User Name" />
+                <div *ngIf="submitted && loginForm.controls.userName.errors">
+                    <div class="text-danger" *ngIf="loginForm.controls.userName.errors.required">
+                        Username is required.....
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of e-mail-->
+        <div class="form-group row">
+            <br/>
+            <label for="password" class="offset-lg-1 col-lg-2 text-left font-weight-bold" style="font-size: 17px;">
+                Password :
+            </label>
+            <div class="col-lg-8">
+                <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+                <div *ngIf="submitted && loginForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">
+                        Password is required.....
+                    </div>
+                </div>
+            </div>
+            <div class="text-danger col-lg-7 text-right" *ngIf="invalidLogin">
+                <br/> Invalid Username or Password
+            </div>
+        </div>
+        <br/>
+        <!--end of password-->
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3 text-left">
+                New User? &nbsp;
+                <a routerLink="/signUp">Sign Up</a>    
+            </div>
+            <div class="col-lg-5 text-right">
+                <button class="btn btn-success">Login</button> &nbsp;
+                <button class="btn btn-danger" type="reset">Cancel</button> &nbsp;
+                <a class="btn btn-outline-warning" routerLink="/home">Home</a>
+                <br/>
+            </div>
+        </div>
+        <br/>
+    </form>
+    <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+</div>

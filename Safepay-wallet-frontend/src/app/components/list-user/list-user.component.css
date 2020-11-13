@@ -1,0 +1,10 @@
+.back {
+    height: 800px;
+    /* margin-bottom: 5000px; */
+}
+input{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+input:focus{
+    background-color: rgba(255, 255, 255, 0.1);
+}

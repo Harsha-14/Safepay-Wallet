@@ -1,0 +1,153 @@
+<div *ngIf="finish && !loading">
+    <div class="col-md-12 col-lg-12" style="margin-top: 5%;">
+    <h3 style="text-align: center;font-size: 40px;">Edit Profile</h3>
+    <!-- <br/> -->
+    <!-- Reactive Forms -->
+    <!-- Designing Edit User Form -->
+    <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+        <!-- First Name Text Box -->
+        <br/><br/>
+        <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+                Full Name :
+            </label>
+
+            <div class="col-lg-6 col-md-6">
+                <input type="text" class="form-control " placeholder="Full Name" formControlName="name" />
+
+                <div *ngIf="submitted && editForm.controls.name.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.name.errors.required">
+                        Full Name is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="editForm.controls.name.errors.pattern">
+                        Full Name must begin with Capital letter and 15 characters long ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of  First Name Text Box -->
+        <!-- Age Text Box -->
+        <div class="form-group row">
+            <label for="age" class="col-lg-4 text-right font-weight-bold">
+                Age :
+            </label>
+            <div class="col-lg-6 col-md-6">
+                <input type="number" class="form-control" placeholder="Age" formControlName="age" />
+
+                <div *ngIf="submitted && editForm.controls.age.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.age.errors.required">
+                        Age is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="editForm.controls.age.errors.min || editForm.controls.age.errors.max">
+                        Age must be between 18 and 80 ..!
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of  Age Text Box -->
+
+        <!-- City Text Box -->
+        <div class="form-group row ">
+            <label for="city" class="col-lg-4 text-right font-weight-bold">
+                City :
+            </label>
+            <div class="col-lg-6 col-md-6">
+                <input type="text" class="form-control " placeholder="City" formControlName="city" />
+
+                <div *ngIf="submitted && editForm.controls.city.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.city.errors.required">
+                        City is required ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of  City Text Box -->
+
+        <!-- Email Text Box -->
+        <div class="form-group row">
+            <label for="email" class="col-lg-4 text-right font-weight-bold">
+                Email :
+            </label>
+            <div class="col-lg-6 col-md-6">
+                <input type="email" class="form-control " placeholder="e.g: abc@example.com" formControlName="email" />
+
+                <div *ngIf="submitted && editForm.controls.email.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.email.errors.required">
+                        Email is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="editForm.controls.email.errors.email">
+                        Invalid Email Address ..!
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- End of  Email Text Box -->
+        <!-- User Name Text Box -->
+        <div class="form-group row ">
+            <label for="userName" class="col-lg-4 text-right font-weight-bold">
+                User Name :
+            </label>
+            <div class="col-lg-6 col-md-6">
+                <input type="text" class="form-control " placeholder="User Name" formControlName="userName" />
+
+                <div *ngIf="submitted && editForm.controls.userName.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.userName.errors.required">
+                        User Name is required ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of  User Name Text Box -->
+        <!-- Password Text Box -->
+        <div class="form-group row">
+            <label for="password" class="col-lg-4 text-right font-weight-bold">
+                Password :
+            </label>
+            <div class="col-lg-6 col-md-6">
+                <input type="password" class="form-control " placeholder="Password" formControlName="password" />
+
+                <div *ngIf="submitted && editForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="editForm.controls.password.errors.required">
+                        Password is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="editForm.controls.password.errors.pattern">
+                        Password Must Contain 1 Capital Letter,1 Small Letter,1 Special Character and 6to 10 letters Long
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of  Password Text Box -->
+
+        <div class="offset-lg-2 col-lg-8 col-md-8 text-right">
+            <button class="btn btn-outline-success">Update</button> &nbsp; &nbsp;
+            
+            <a class="btn btn-outline-danger" routerLink="/userLogin/accDetails">Cancel</a>
+        </div>
+        <br/><br/>
+    </form>
+</div>
+</div>
+<div class="text-center col-lg-12 col-md-12" *ngIf="!finish && !loading" style="margin-top: 100px;">
+    <br>
+    <br>
+    <img src="/assets/images/success.gif" height="125" width="125" />
+    <br>
+    <br/>
+    <h4 class="text-solid">
+        Transaction Successful...!!
+    </h4>
+</div>
+<div class="text-center col-lg-12 col-md-12" *ngIf="loading" style="margin-top: 100px;">
+    <br>
+    <br>
+    <img src="/assets/images/loading.gif" height="125" width="125" />
+    <br>
+    <br/>
+    <h4 class="text-solid">
+        Please Wait...
+    </h4>
+</div>

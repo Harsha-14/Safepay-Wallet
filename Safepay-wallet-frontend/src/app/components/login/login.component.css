@@ -1,0 +1,14 @@
+
+form{
+    /* border:3px solid; */
+    margin: auto;
+    width: 50%;
+    margin-top: 1%;
+ }
+ input{
+     /* font-weight: 500; */
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+input:focus{
+    background-color: rgba(255, 255, 255, 0.1);
+}

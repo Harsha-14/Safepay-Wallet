@@ -1,0 +1,182 @@
+<div *ngIf="finish && !loading">
+<div class="col-lg-12 col-md-12"  style="background-image: url(assets/images/2.jpg);height: 850px;background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <br/>
+    <form [formGroup]="signUpForm" (ngSubmit)="addUser()">
+        <div>
+            <h3 class="text-center" style="font-size: 50px;">Sign Up</h3>
+        </div>
+        <!-- First Name text Box -->
+        <br/>
+        <div class="form-group row">
+            <label for="name" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Full Name:
+            </label>
+            <div class="col-lg-7">
+                <input type="text" class="form-control" placeHolder="Full Name" formControlName="name" required />
+                <div *ngIf="submitted && signUpForm.controls.name.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.name.errors.required">
+                        Full Name is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.name.errors.pattern">
+                        Name must begin with capital letter and 15 characters long...!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Age text Box -->
+        <div class="form-group row">
+            <label for="age" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Age:
+            </label>
+            <div class="col-lg-7">
+                <input type="number" class="form-control" placeHolder="Age" formControlName="age" />
+                <div *ngIf="submitted && signUpForm.controls.age.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.age.errors.required">
+                        Age is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.age.errors.min">
+                        Age must be above 18 and below 80...!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- City Name text Box -->
+        <div class="form-group row">
+            <label for="city" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                City:
+            </label>
+            <div class="col-lg-7">
+                <input type="text" class="form-control" placeHolder="City" formControlName="city" />
+                <div *ngIf="submitted && signUpForm.controls.city.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.city.errors.required">
+                        City is Required...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MobileNumber text Box -->
+        <div class="form-group row">
+            <label for="phoneNumber" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Mobile Number:
+            </label>
+            <div class="col-lg-7">
+                <input type="number" class="form-control" placeHolder="Mobile Number" formControlName="phoneNumber" />
+                <div *ngIf="submitted && signUpForm.controls.phoneNumber.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.phoneNumber.errors.required">
+                        Mobile Number is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.phoneNumber.errors.pattern">
+                        Mobile Number must be 10 digits...!
+                    </div>
+                </div>
+                <div *ngIf="submitted && phoneNumberError">
+                    <div class="text-danger">
+                        Mobile Number is Already Registered...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- email text Box -->
+        <div class="form-group row">
+            <label for="email" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Email:
+            </label>
+            <div class="col-lg-7">
+                <input type="email" class="form-control" placeHolder="Email" formControlName="email" />
+                <div *ngIf="submitted && signUpForm.controls.email.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.email.errors.required">
+                        Email is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.email.errors.email">
+                        Invalid Email Address...!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- User Name text Box -->
+        <div class="form-group row">
+            <label for="userName" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                User Name:
+            </label>
+            <div class="col-lg-7">
+                <input type="text" class="form-control" placeHolder="User Name" formControlName="userName" />
+                <div *ngIf="submitted && signUpForm.controls.userName.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.userName.errors.required">
+                        User Name is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.userName.errors.pattern">
+                        User Name Must Contain 1 Capital Letter,1 Small Letter,1 Special Character and 6to 10 letters Long
+                    </div>
+                </div>
+                <div *ngIf="submitted && userNameError">
+                    <div class="text-danger">
+                        User Name Already Exists...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Password text Box -->
+        <div class="form-group row">
+            <label for="password" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Password:
+            </label>
+            <div class="col-lg-7">
+                <input type="password" class="form-control" placeHolder="Password" formControlName="password" />
+                <div *ngIf="submitted && signUpForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.password.errors.required">
+                        Password is Required...
+                    </div>
+                    <div class="text-danger" *ngIf="signUpForm.controls.password.errors.pattern">
+                        Password Must Contain 1 Capital Letter,1 Small Letter,1 Special Character and 6to 10 letters Long
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Password2 text Box -->
+        <div class="form-group row">
+            <label for="password2" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Re-Enter Password:
+            </label>
+            <div class="col-lg-7">
+                <input type="password" class="form-control" placeHolder="Re-Enter Password" formControlName="password2" />
+                <div *ngIf="submitted && signUpForm.controls.password2.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.password2.errors.required">
+                        Password is Required...
+                    </div>
+                </div>
+                <div *ngIf="submitted && pass">
+                    <div class="text-danger">
+                        Password MisMatch...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-11 text-right">
+            <button class="btn btn-success">Save&nbsp;<i class='fas fa-save' style='font-size:15px'></i></button>&nbsp;&nbsp;
+            <button class="btn btn-danger" type="reset">Cancel</button>&nbsp;&nbsp;
+            <button class="btn btn-outline-warning" routerLink="/login">Back</button>
+        </div>
+        <br/>
+    </form>
+    <br/><br/><br/><br/><br/><br/>
+    
+</div>
+</div>
+
+<div *ngIf="!(finish) && !loading" style="background-image: url(assets/images/2.jpg);">
+    <br/><br/><br/><br/><br/><br/><br/>
+<h1 class="text-center">Account Number: {{accountNumb}}<br/><br/></h1>
+    <h1 class="text-center">Please Login to Continue.....<br/><br/>
+<button class="btn btn-success" routerLink="/login">Login</button></h1>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<div class="text-center col-lg-12 col-md-12" *ngIf="loading" style="background-image: url(assets/images/2.jpg);height: 850px;background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <br>
+    <br>
+    <img src="/assets/images/loading.gif" height="125" width="125" />
+    <br>
+    <br/>
+    <h4 class="text-solid">
+        Please Wait...
+    </h4>
+</div>

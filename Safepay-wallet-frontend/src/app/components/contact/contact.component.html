@@ -1,0 +1,92 @@
+
+<div *ngIf="finish">
+  <div class="col-lg-12 col-md-12"  style="background-image: url(assets/images/2.jpg);height: 800px;background-position: center;background-repeat: no-repeat;background-size: cover;">
+      <br/>
+      <div id="mySidenav" class="sidenav">
+        <a href="https://www.facebook.com/" id="fb">Facebook&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" id="insta">Instagram&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/login" id="twitter">Twitter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/" id="youtube">Youtube &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-youtube"></i></a>
+        <a href="https://www.pinterest.com/" id="pinterest">Pinterest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-pinterest"></i></a>
+      </div>
+      <form [formGroup]="contactForm" (ngSubmit)="contact()">
+          <div>
+              <h3 class="text-center" style="font-size: 50px;">Contact Us</h3>
+          </div>
+          <!-- First Name text Box -->
+          <br/>
+          <div class="form-group row">
+              <label for="name" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                  Full Name:
+              </label>
+              <div class="col-lg-7">
+                  <input type="text" class="form-control" placeHolder="Full Name" formControlName="name" required />
+                  <div *ngIf="submitted && contactForm.controls.name.errors">
+                      <div class="text-danger" *ngIf="contactForm.controls.name.errors.required">
+                          Full Name is Required...
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- City Name text Box -->
+          <div class="form-group row">
+              <label for="city" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                  City:
+              </label>
+              <div class="col-lg-7">
+                  <input type="text" class="form-control" placeHolder="City" formControlName="city" />
+                  <div *ngIf="submitted && contactForm.controls.city.errors">
+                      <div class="text-danger" *ngIf="contactForm.controls.city.errors.required">
+                          City is Required...
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- email text Box -->
+          <div class="form-group row">
+              <label for="email" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                  Email:
+              </label>
+              <div class="col-lg-7">
+                  <input type="email" class="form-control" placeHolder="Email" formControlName="email" />
+                  <div *ngIf="submitted && contactForm.controls.email.errors">
+                      <div class="text-danger" *ngIf="contactForm.controls.email.errors.required">
+                          Email is Required...
+                      </div>
+                      <div class="text-danger" *ngIf="contactForm.controls.email.errors.email">
+                          Invalid Email Address...!
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Subject text area -->
+          <div class="form-group row">
+            <label for="subject" class="offset-lg-1 col-lg-3 text-left font-weight-bold" style="font-size: 17px;">
+                Subject:
+            </label>
+            <div class="col-lg-7">
+                <textarea class="form-control" placeHolder="Write Text Here...." formControlName="subject" ></textarea>
+                <div *ngIf="submitted && contactForm.controls.subject.errors">
+                    <div class="text-danger" *ngIf="contactForm.controls.subject.errors.required">
+                        Subject is Required...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 text-right">
+              <button class="btn btn-danger">Send</button>&nbsp;&nbsp;
+          </div>
+          <br/>
+      </form>
+      <br/><br/><br/><br/><br/><br/>
+      
+  </div>
+  </div>
+  
+  <div *ngIf="!(finish)" style="background-image: url(assets/images/2.jpg);">
+      <br/><br/><br/><br/><br/><br/><br/>
+  <h1 class="text-center">Account Created Successfully<br/><br/></h1>
+      <h1 class="text-center">Please Login to Continue.....<br/><br/>
+  <button class="btn btn-success" routerLink="/login">Login</button></h1>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>

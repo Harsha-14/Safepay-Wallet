@@ -1,0 +1,40 @@
+{
+    "users": [
+      {
+        "firstName": "Harsha",
+        "lastName": "Samayamanthula",
+        "age": 25,
+        "mobileNumber": "9492056849",
+        "email": "abc@gmail.com",
+        "password": "harsha14",
+        "id": 1
+      },
+      {
+        "firstName": "Harsha",
+        "lastName": "Samayamanthula",
+        "age": 25,
+        "mobileNumber": "9492056849",
+        "email": "abc@gmail.com",
+        "password": "harsha14",
+        "id": 2
+      },
+      {
+        "firstName": "Harsha",
+        "lastName": "Samayamanthula",
+        "age": 25,
+        "mobileNumber": "9492056849",
+        "email": "abc@gmail.com",
+        "password": "harsha14",
+        "id": 3
+      },
+      {
+        "firstName": "Harsha",
+        "lastName": "Samayamanthula",
+        "age": 25,
+        "mobileNumber": "9492056849",
+        "email": "abc@gmail.com",
+        "password": "harsha14",
+        "id": 4
+      }
+    ]
+  }

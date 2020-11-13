@@ -1,0 +1,42 @@
+create table account (accountNum number(10) primary key, name varchar2(25), city varchar2(20),age number(5), phoneNum varchar2(12), balance number(10),email varchar2(60), userName varchar2(15), password varchar2(15));
+
+create table Passbook (id varchar2(6) primary key, accNum number, action varchar2(25),amount number(10,2),balance number(10,2),dated varchar2(15),time varchar2(15),FOREIGN KEY (accNum) references Account(accountNum));
+
+insert into account values(1111,'Harsha','Kakinada',21,9492056849,0,'sriharshanov1999@gmail.com','h','h');
+
+ insert into account values(1112,'Jyothi','Kakinada',37,9550259189,0,'jyomay1982@gmail.com','Jyothi@1','Jyothi@1');
+ 
+insert into account values(1113,'Ammu','Kakinada',18,9293726849,0,'ammu2002@gmail.com','Ammu@26','Ammu@26');
+ commit;
+
+ 
+system/hr
+set linesize 500;
+
+select * from account;
+select * from passbook;
+ desc account;
+desc passbook;
+ 
+drop table passbook cascade constraints;
+drop table account cascade constraints;
+commit;
+ 
+ 
+ 
+ 
+ Hibernate: create table account (accountnumber number(10,0) not null, age number(10,0), balance double precision, city varchar2(20 char), email varchar2(50 char), name varchar2(30 char), password varchar2(15 char), phonenumber varchar2(15 char), username varchar2(15 char), primary key (accountnumber))
+Hibernate: create table passbook (transactionid varchar2(10 char) not null, action varchar2(20 char), amount double precision, balance double precision, day varchar2(20 char), time varchar2(20 char), account number(10,0), primary key (transactionid))
+Hibernate: alter table passbook add constraint FKelfkj4p0mem9fq0h7no60636m foreign key (account) references account
+
+
+
+insert into account values(1112,21,0,'Kakinada','sriharshanov1999@gmail.com','Harsha','h',9492056845,'h');
+insert into account values(1113,21,0,'Kakinada','sriharshanov1999@gmail.com','Harsha','ha',9492056841,'h');
+insert into account values(1114,21,0,'Kakinada','sriharshanov1999@gmail.com','Harsha','hr',9492056842,'h');
+insert into account values(1115,21,0,'Kakinada','sriharshanov1999@gmail.com','Harsha','hs',9492056843,'h');
+insert into account values(1116,21,0,'Kakinada','sriharshanov1999@gmail.com','Harsha','hh',9492056844,'h');
+commit;
+
+
+Harsha@14

@@ -1,0 +1,19 @@
+
+form{
+    /* border:3px solid; */
+    margin: auto;
+    width:50%;
+    /* max-width: 1000px; */
+    margin-top: 1%;
+    max-height: 550px;
+    /* overflow-y: scroll; */
+    /* overflow-x: hidden; */
+    /* -webkit-overflow-scrolling: auto; */
+ }
+
+ input{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+input:focus{
+    background-color: rgba(255, 255, 255, 0.1);
+}

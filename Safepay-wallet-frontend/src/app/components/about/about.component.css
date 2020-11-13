@@ -1,0 +1,61 @@
+.box1{
+    position: absolute;
+    width: 67%;
+    height: 340px;
+    left:2%;
+    padding: 2%;
+    /* border: 1px solid black; */
+}
+
+.box2{
+    position: relative;
+    width: 27%;
+    height: 340px;
+    left:70%;
+    padding: 2%;
+    /* top: 1%; */
+    /* border: 1px solid black; */
+}
+.staticFoote{
+    margin-top: 0%;
+    /* border: 1px solid black; */
+    height: 150px;
+
+}
+.b1{
+    position: absolute;
+    width: 25%;
+    height: 150px;
+    left:0%;
+    padding: 2%;
+    /* border: 1px solid blue; */
+    text-align: center;
+}
+.b2{
+    position: absolute;
+    width: 25%;
+    height: 150px;
+    padding: 2%;
+    left:25%;
+    padding: 2%;
+    /* border: 1px solid green; */
+    text-align: center;
+}
+.b3{
+    position: absolute;
+    width: 25%;
+    height: 150px;
+    left:50%;
+    padding: 2%;
+    /* border: 1px solid green; */
+    text-align: center;
+}
+.b4{
+    position: relative;
+    width: 25%;
+    height: 150px;
+    left:75%;
+    padding: 2%;
+    text-align: center;
+    /* border: 1px solid green; */
+}

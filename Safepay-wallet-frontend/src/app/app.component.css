@@ -1,0 +1,158 @@
+.d1{
+    padding: 0.5%;
+}
+ 
+.d2{
+    top: 0px;
+    padding: 1px;
+}
+
+a :hover{
+    opacity: 0%;
+}
+a :active{
+    opacity: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .d1{
+    top: 0px;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    background-size: cover;
+}
+
+.d2{
+    top: 68px;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+}
+
+.d3{
+    top: 118px;
+    bottom: 0px;
+    /* background-color: aqua; */
+    /* position: fixed;
+    width: 100%;
+    background-size: cover; */
+/* } */
+/* 
+.d4{
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+} */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .d1{
+    top: 0px;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    background-size: cover;
+}
+
+.d2{
+    top: 68px;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+}
+
+.d3{
+    top: 118px;
+    bottom: 40px;
+    background-color: aqua;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+.d4{
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+} */

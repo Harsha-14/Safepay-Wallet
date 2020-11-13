@@ -1,0 +1,21 @@
+<body class="bg col-lg-12 col-md-12" style="background-image: url(assets/images/2.jpg);">
+  <div class="row">
+    <span class="col-lg-2 text-left" style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; Menu</span>
+    <!-- side navigation bar -->
+    <div id="mySidenav" class="col-lg-3 sidenav">
+      <a class="closebtn" (click)="closeNav()">&times;</a>
+      <a routerLink="/userLogin/accDetails"><i class='fas fa-home'></i> Home</a>
+      <a routerLink="/userLogin/balance"><i class='fas fa-rupee-sign' style="font-size: 30px;"></i> Show Balance</a>
+      <a routerLink="/userLogin/deposit"><i class='fas fa-donate'></i> Deposit</a>
+      <a routerLink="/userLogin/withdraw"><i class='fas fa-money-bill-wave'></i> Withdraw</a>
+      <a routerLink="/userLogin/fundTransfer"><i class='fas fa-share'></i> Fund Transfer</a>
+      <a routerLink="/userLogin/passbook"><i class='fas fa-book'></i> Passbook</a>
+      <a routerLink="/userLogin/edit-user"><i class='fas fa-user-alt'></i> Edit Profile</a>
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Log out</a>
+    </div>
+    <div class="col-lg-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</body>
